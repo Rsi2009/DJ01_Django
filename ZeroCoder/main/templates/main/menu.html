@@ -1,0 +1,11 @@
+{% load static %}
+<aside class="bg-light p-3 border-right">
+    <img src="{% static 'main/img/cat.png' %}" alt="Логотип котика" class="img-fluid mb-3">
+    <h5 class="font-weight-bold mb-3">CatDjango</h5>
+    <ul class="nav flex-column">
+        <li class="nav-item"><a class="nav-link active" href="{% url 'home' %}">Главная</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'page2' %}">Второстепенная</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'page3' %}">Третья страница</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'page4' %}">Четвертая страница</a></li>
+    </ul>
+</aside>
