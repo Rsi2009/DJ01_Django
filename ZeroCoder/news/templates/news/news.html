@@ -8,14 +8,22 @@
 
 <h1>Новостная страница</h1>
 
-{% for new in news %}
-	<div>
-		<h3> {{ new.title }} </h3>
-		<p> {{ new.short_description }} </p>
-		<p><strong>Автор:</strong> {{ new.username.username }}</p>
-        <p><strong>Дата публикации:</strong> {{ new.pub_date }}</p>
-		<p>{{ new.text }}</p>
-	</div>
-{% endfor %}
-
+	{% if news %}
+		{% for new in news %}
+			<div>
+				<div class="card" style="width: 65rem;">
+				  <div class="card-body">
+					<h5 class="card-title">{{ new.title }}</h5>
+					<p class="card-text">{{ new.short_description }}</p>
+						<p><strong>Автор:</strong> {{ new.username.username }}</p>
+						<p><strong>Дата публикации:</strong> {{ new.pub_date }}</p>
+						<a href="#" class="btn btn-primary">Подробнее</a>
+						<p>{{ new.text }}</p>
+				  </div>
+				</div>
+			</div>
+		{% endfor %}
+	{% else %}
+			<h4>Новостей ещё нет</h4>
+	{% endif %}
 {% endblock %}
